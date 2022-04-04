@@ -17,15 +17,18 @@ function initializeReactGA() {
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
-initializeReactGA()
+//initializeReactGA()
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 // Google Sheets Document ID -- PROD
-const doc = new GoogleSpreadsheet('1u7jiqY1qM0jYWugn1dFiW3plQrvWysJqm8xXhO35zuU');
+//const doc = new GoogleSpreadsheet('1u7jiqY1qM0jYWugn1dFiW3plQrvWysJqm8xXhO35zuU');
+const doc = process.env.REACT_APP_SHEET_ID;
 
 // Google Sheets Document ID -- DEV
 // const doc = new GoogleSpreadsheet('1jQI6PstbEArW_3xDnGgPJR6_37r_KjLoa765bOgMBhk');
+
+
 
 // Provider for leaflet-geosearch plugin
 const provider = new BingProvider({
